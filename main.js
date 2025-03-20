@@ -4,8 +4,20 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('modal');
+  modal.className = 'hidden';
+});
 
+const { expect } = require('chai');
 
+describe('main.js', function() {
+  it('contains a hidden modal', function() {
+    const modal = document.querySelector('#modal');
+    expect(modal).to.not.be.null;
+    expect(modal.className).to.equal('hidden');
+  });
+});
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
